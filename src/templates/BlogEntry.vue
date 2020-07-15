@@ -11,13 +11,9 @@
           <p class="px-2">—</p>
           <time :datetime="$page.blog.datetime">{{ $page.blog.humanTime }}</time>
           <p class="px-2">—</p>
-          <p class="category">
-            Posted in
-            <g-link :to="$page.blog.category.path">{{ $page.blog.category.title }}</g-link>
-          </p>
         </div>
         <figure class="mt-10 md:mt-20">
-          <g-image :alt="$page.blog.image_caption" :src="$page.blog.image" />
+          <g-image class="rounded-lg" :alt="$page.blog.image_caption" :src="$page.blog.cover_image" />
           <figcaption
             class="text-center text-sm italic text-gray-600 mt-4"
           >{{ $page.blog.image_caption }}</figcaption>
@@ -30,18 +26,16 @@
 
         <div v-html="$page.blog.content"></div>
 
-        <ul class="flex pt-8 border-t border-gray-100">
+        <ul class="flex pt-8 border-t border-gray-100 list-none">
           <li class="mr-2" v-for="tag in $page.blog.tags" :key="tag.id">
             <g-link
               :to="tag.path"
-              class="inline-block border border-pink-300 px-4 py-2 text-pink-500 text-xs font-semibold rounded hover:text-white hover:bg-pink-500 hover:border-pink-500"
+              class="inline-block border border-pink-300 px-4 py-2 text-pink-500  font-semibold rounded hover:text-white hover:bg-pink-500 hover:border-pink-500"
 
             >{{ tag.title}}</g-link>
           </li>
         </ul>
       </div>
-
-
     </section>
   </Layout>
 </template>
@@ -58,10 +52,6 @@
       content
       humanTime : date(format:"Do MMMM YYYY")
       datetime : date(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-      category {
-        title
-        path
-      }
       author {
         name
       }
@@ -78,7 +68,9 @@
 </page-query>
 
 <script>
+import AuthorBox from '../layouts/partials/AuthorBox';
 export default {
+  components: { AuthorBox },
   metaInfo() {
     return {
       title: this.$page.blog.title

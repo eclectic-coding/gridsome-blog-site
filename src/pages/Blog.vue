@@ -14,13 +14,6 @@
                 class="featured-image-link block relative overflow-hidden"
                 :to="entry.node.path"
               >
-                <ul class="absolute bottom-0 left-0 flex p-8 z-10">
-                  <li class="mr-2">
-                    <span
-                      class="inline-block bg-pink-500 px-4 py-2 text-white text-xs font-bold rounded"
-                    >{{ entry.node.category.title }}</span>
-                  </li>
-                </ul>
                 <figure>
                   <g-image
                     class="block loaded"
@@ -41,6 +34,19 @@
                   <p class="hidden md:block px-2">—</p>
                   <time :datetime="entry.node.datetime">{{ entry.node.humanTime }}</time>
                 </div>
+              </div>
+              <div class="p-8 text-sm text-gray-600 md:flex mb-4">
+                <ul class="flex">
+                  <li class="mr-2" v-for="tag in entry.node.tags" :key="tag.id">
+                    <g-link
+                      :to="tag.path"
+                      class="border border-pink-300 px-3 py-2 text-pink-500 text-sx font-semibold rounded hover:text-white hover:bg-pink-500 hover:border-pink-500"
+                    >
+                      {{ tag.title }}
+                    </g-link>
+
+                  </li>
+                </ul>
               </div>
             </article>
           </div>
@@ -71,8 +77,10 @@ export default {
           author {
             name
           }
-          category {
-            title
+          tags {
+                id
+                title
+                path
           }
         }
       }

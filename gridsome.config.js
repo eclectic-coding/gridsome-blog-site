@@ -11,7 +11,7 @@ module.exports = {
         shouldPurge: true,
         shouldImport: true,
         shouldTimeTravel: true,
-        shouldPurgeUnusedKeyframes: true,
+        shouldPurgeUnusedKeyframes: true
       }
     },
     {
@@ -37,11 +37,12 @@ module.exports = {
           tags: {
             typeName: 'Tag',
             create: true
-          },
-          category: {
-            typeName: 'Category',
-            create: true
           }
+        },
+        remark: {
+          plugins: [
+            '@gridsome/remark-prismjs'
+          ]
         }
       }
     }
@@ -50,10 +51,6 @@ module.exports = {
     Blog: [{
       path: '/blog/:title',
       component: './src/templates/BlogEntry.vue'
-    }],
-    Category: [{
-      path: '/category/:title',
-      component: './src/templates/Category.vue'
     }],
     Tag: [{
       path: '/tag/:title',
@@ -65,4 +62,4 @@ module.exports = {
     config.resolve.alias.set('@utilities', '@/resources/js/utilities');
 
   }
-}
+};

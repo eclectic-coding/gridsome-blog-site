@@ -11,7 +11,7 @@
         </p>
 
         <ul class="flex justify-center">
-          <li class="mr-4" v-for="element in $static.metadata.social" :key="element.link">
+          <li class="mr-4 list-none" v-for="element in $static.metadata.social" :key="element.link">
             <a
               :href="element.link"
               class="block text-gray-500 hover:text-pink-500"

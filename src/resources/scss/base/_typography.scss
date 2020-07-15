@@ -1,23 +1,63 @@
 h1, h2, h3, h4, h5, h6 {
-    @apply font-bold leading-tight mt-0 mb-6 text-purple-900;
+  @apply font-bold leading-tight mt-0 mb-6 text-purple-900;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+  @apply border-b border-gray-200 w-1/4 mb-3 pb-2 leading-snug;
+}
+
+h3 {
+  @apply text-xl;
+  @apply border-b border-gray-200 w-1/4 mb-3 pb-2 leading-snug;
 }
 
 .page-title {
-	@apply text-5xl;
+  @apply text-5xl;
 }
 
 
 .content {
 
-	p {
-		@apply mb-8;
+  p {
+    @apply mb-8;
+    line-height: 1.75;
 
-		&:first-child {
-			@apply border-b border-gray-200 text-2xl pb-10 mb-10 font-light leading-snug text-gray-600;
+    &:first-child {
+      @apply border-b border-gray-200 text-2xl pb-10 mb-10 font-light leading-snug text-gray-600;
 
-			@screen md {
-                @apply text-3xl;
-            }
-		}
+      @screen md {
+        @apply text-3xl;
+      }
     }
+  }
 }
+
+pre {
+  border-radius: 10px;
+  margin: 1rem 1rem 2rem !important;
+  width: 85%;
+  //margin-right: 1rem !important;
+}
+
+p code,
+ul li code {
+  background-color: rgb(30, 30, 63);
+  color: rgb(158, 254, 255);;
+  padding: 3px 8px;
+  margin: 0 3px;
+  border-radius: 5px;
+  line-height: 1.75;
+}
+
+ul {
+  @apply list-inside;
+  list-style-type: circle;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+}
+

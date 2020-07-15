@@ -44,7 +44,7 @@ The last line of the `.railsrc` file is reserved for template files that will ru
 --database=postgresql
 --template=/path/to/file/rails-template.rb
 ```
-I have stored my simple template file locally, and you can name as you like. Here is my simeple script:
+I have stored my simple template file locally, and you can name as you like. Here is my simple script:
 ```ruby
 #add guard-minitest and spring to dev
 
@@ -75,7 +75,7 @@ run "psql -c 'CREATE DATABASE #{app_path}_development;'"
 run "psql -c 'CREATE DATABASE #{app_path}_test;'"
 ```
 In this template I am setting up my beginning project preferences:
-- Set up a better console printing with `awesome_print`
+- Set up better console printing with `awesome_print`
 - Setup my preferred testing environment
 - Bundle install
 - Setup a static controller for the Home page
@@ -88,13 +88,11 @@ So, all I have to do, is change to the new project directory and start the Rails
 
 [Matt Brictson](https://github.com/mattbrictson/rails-template) has put together a more full featured Rails template that is preloaded with the best practices for TDD, security, deployment, and developer productivity.
 
-**Jumpstart**
-
+**Jumpstart**  
 Building on the work of Matt's open source template Chris Oliver has put together a template called [Jumpstart](https://github.com/excid3/jumpstart/blob/master/template.rb). This template creates a Boilerplate app that includes user accounts, admin interface, and Bootstrap styling.
 
-**Jumpstart Pro**
-
-Chris also has a commercial product called [JUmpstart Pro](https://jumpstartrails.com/) that bootstraps a full featured e-commerce application setup.
+**Jumpstart Pro**  
+Chris also has a commercial product called [Jumpstart Pro](https://jumpstartrails.com/) that bootstraps a full featured e-commerce application setup.
 
 ### Post install template
 

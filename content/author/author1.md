@@ -1,8 +1,8 @@
 ---
 id: author1
 name: Chuck Smith
-facebook: https://www.facebook.com
 twitter: https://www.twitter.com
 linkedin: https://www.linkedin.com
+devto: https://www.dev.to
 image: ./images/author1.png
 ---
